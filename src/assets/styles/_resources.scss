@@ -1,0 +1,228 @@
+@import '_variables';
+
+//Common Styles
+.button, button {
+	text-decoration: none;
+	padding: 15px 30px;
+	text-transform: uppercase;
+	font-family: $font-secondary;
+	font-size: 13px;
+	letter-spacing: 1px;
+	cursor: pointer;
+	text-align: center;
+	border-radius: 0.25rem;
+
+	&.primary {
+		background: $color-primary;
+		border: 2px solid $color-primary;
+		color: #fff;
+		font-weight: bold;
+
+		&.disabled {
+			background: #999;
+			border: 2px solid #999;
+		}
+	}
+
+	&.secondary {
+		border: 2px solid $color-primary;
+		color: $color-primary;
+		background: none;
+	}
+
+	&.alt-primary {
+		border: 2px solid #fff;
+		background: #fff;
+		color: #000;
+
+		// &:hover {
+		// 	background: $color-primary;
+		// 	border: 2px solid $color-primary;
+		// 	color: #fff;
+		// }
+	}
+
+	&.alt-secondary {
+		border: 2px solid #fff;
+		color: white;
+		background: none;
+
+		// &:hover {
+		// 	background: #fff;
+		// 	color: $color-primary;
+		// }
+	}
+
+	&:active {
+		position: relative;
+		top: 1px;
+	}
+}
+
+.input {
+	text-decoration: none;
+	padding: 15px;
+	font-family: $font-secondary;
+	font-size: 13px;
+	letter-spacing: 1px;
+	cursor: pointer;
+	border-radius: .25rem;
+	border: 1px solid #ccc;
+	outline: none;
+
+	&:focus {
+		border: 1px solid black;
+	}
+}
+
+.select {
+	padding: 15px;
+	font-family: $font-secondary;
+	font-size: 13px;
+	letter-spacing: 1px;
+	cursor: pointer;
+	border-radius: .25rem;
+	border: 1px solid #ccc;
+	outline: none;
+
+	&:focus {
+		border: 1px solid black;
+	}
+}
+
+
+.badge {
+	background: #1d1d1d;
+	color: white;
+	font-family: $font-primary;
+	display: inline-block;
+	padding: 10px 15px;
+	border-radius: 4px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.33);
+}
+
+
+.h1, h1 {
+	font-size: 82px;
+	letter-spacing: -3px;
+	font-weight: 500;
+	margin: 0;
+
+	@include xx-large {
+		font-size: 128px;
+		letter-spacing: -6.8px;
+	}
+}
+
+.h2, h2 {
+	font-size: 60px;
+	letter-spacing: -2px;
+	font-weight: 500;
+	margin: 0;
+
+	@include xx-large {
+		font-size: 100px;
+		letter-spacing: -3.8px;
+	}
+}
+
+.h3, h3 {
+	font-size: 35px;
+	font-weight: 600;
+	letter-spacing: -0.66px;
+	margin: 0 0 15px;
+
+
+	@include xx-large {
+		font-size: 57.5px;
+		letter-spacing: -3.05px;
+	}
+}
+
+.h4, h4 {
+	font-size: 21px;
+	letter-spacing: -0.33px;
+	font-weight: 400;
+
+	@include xx-large {
+		font-size: 35.5px;
+		letter-spacing: -0.66px;
+	}
+}
+
+.h5, h5 {
+	font-size: 18px;
+	letter-spacing: -0.33px;
+	font-weight: 400;
+
+	// @include xx-large {
+	// 	font-size: 35.5px;
+	// 	letter-spacing: -0.66px;
+	// }
+}
+
+.h6, h6 {
+	font-size: 14px;
+	font-weight: bold;
+	letter-spacing: -0.33px;
+
+	// @include xx-large {
+	// 	font-size: 35.5px;
+	// 	letter-spacing: -0.66px;
+	// }
+}
+
+.social-link {
+	&, &:hover, &:active, &:visited {
+		color: black;
+	}
+
+	.fab {
+		font-size: 31px;
+		margin: 0 3px;
+
+		@include small {
+			margin: 0 6px;
+		}
+	}
+}
+
+//Section style
+
+.inverted {
+	background: black;
+	color: white;
+
+	.social-link {
+		&, &:hover, &:active, &:visited {
+			color: white;
+		}
+	}
+}
+
+::selection {
+  background: #ccc;
+}
+::-moz-selection {
+  background: #ccc;
+}
+
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $font-primary;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}

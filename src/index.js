@@ -1,12 +1,14 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import { render } from 'react-dom';
+import { createStore } from 'redux';
+import evolveApp from './redux/reducers/reducers';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import App from './pages/app/app';
+import './index.scss';
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+const store = window.store = createStore(
+  evolveApp,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+);
+
+render(<App store={store} />, document.getElementById('root'));
