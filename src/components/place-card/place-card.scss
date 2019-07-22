@@ -26,5 +26,13 @@
 			color: $color-primary;
 			font-weight: bold;
 		}
+
+		#price {
+			color: #999;
+
+			.accented {
+				color: $color-success;
+			}
+		}
 	}
 }

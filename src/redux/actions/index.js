@@ -9,10 +9,6 @@ export const DATA_RECEIVED = 'DATA_RECEIVED';
  * action creators
  */
 
-export const dataRequested = (payload) => {
-  return { type: DATA_REQUESTED, payload };
-};
+export const dataRequested = payload => ({ type: DATA_REQUESTED, payload });
 
-export const dataReceived = (payload) => {
-  return { type: DATA_RECEIVED, payload };
-};
+export const dataReceived = payload => ({ type: DATA_RECEIVED, payload });
