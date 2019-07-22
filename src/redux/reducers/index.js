@@ -10,7 +10,7 @@ const pages = (state = {}, action) => {
     case DATA_REQUESTED:
       return state;
     case DATA_RECEIVED:
-      return { ...state, places: action.payload };
+      return { ...state, ...action.payload };
     default:
       return state;
   }

@@ -1,0 +1,13 @@
+@import '../../assets/styles/_variables.scss';
+
+#PaginationNavigator {
+	text-align: center;
+	margin: 2rem 0 1rem;
+
+	span {
+		&.accent {
+			color: $color-primary;
+			font-weight: 500;
+		}
+	}
+}

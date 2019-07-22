@@ -1,73 +1,31 @@
 @import '../../assets/styles/_variables.scss';
 
-#Catalog {
+#Main {
 
-  $hero-height: 33.75rem;
-  #catalog-hero {
-    background: #A7B9CA url('../../assets/images/catalog-hero.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    color: white;
-    height: $hero-height;
-    text-align: center;
-    line-height: $hero-height;
-  }
+  max-width: 60rem;
+  width: 100%;
+  margin: 0 auto;
+  
+  .places-container {
+    display: flex;
+    flex-direction: row;
+    padding: 0.15rem;
+    flex-wrap: wrap;
+    justify-content: space-between;
 
-
-  #items {
-    width: 100%;
-    max-width: 85.375rem;
-    margin: 6rem auto 0;
-
-    #grouping-container {
-      display: block;
-
-      h4 {
-        padding: 0 1.2rem;
-        margin-bottom: 1.5rem;
-        font-weight: 500;
-        display: inline-block;
-
-        a {
-          color: black;
-          text-decoration: none;
-        }
-      }
-    }
-
-    #product-container {
-      display: flex;
-      position: relative;
-      flex-flow: row wrap;
-      justify-content: space-around;
-      padding: 0 .3125rem;
-
-      &:after {
-        content: "";
+    .places-item {
+      margin: 1rem 0;
+      
+      @include small {
         flex: 0 0 50%;
-
-        @media (min-width: 1366px) {
-          flex: 0 0 33.3333%;
-        }
       }
 
-      .anchor-link-marker {
-        position: absolute;
-        height: 2px;
-        width: 2px;
-        top: -11rem;
+      @include medium {
+        flex: 0 0 33.3333%;
       }
 
-      .item {
-        flex: 1 0 auto;
-        padding: .3125rem;
-        margin-bottom: 5rem;
-        width: 100%;
-
-        @include small {
-          width: auto;
-        }
+      @include large {
+        flex: 0 0 25%;
       }
     }
   }
