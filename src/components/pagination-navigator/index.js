@@ -1,3 +1,3 @@
 import PaginationNavigator from './pagination-navigator';
 
-export PaginationNavigator;
+export default PaginationNavigator;

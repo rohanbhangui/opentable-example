@@ -1,14 +1,24 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { createStore } from 'redux';
-import evolveApp from './redux/reducers/reducers';
+import { createStore, compose, applyMiddleware } from 'redux';
+import createSagaMiddleware from 'redux-saga';
+import { logger } from 'redux-logger';
+import reducers from './redux/reducers';
+import rootSaga from './redux/sagas';
 
-import App from './pages/app/app';
+import App from './pages/app';
 import './index.scss';
 
+const sagaMiddleware = createSagaMiddleware();
+
 const store = window.store = createStore(
-  evolveApp,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+  reducers,
+  compose(
+  	applyMiddleware(sagaMiddleware, logger),
+  	window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+  )
 );
+
+sagaMiddleware.run(rootSaga);
 
 render(<App store={store} />, document.getElementById('root'));

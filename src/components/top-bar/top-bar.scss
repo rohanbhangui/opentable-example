@@ -30,9 +30,21 @@ header {
 			> span {
 				margin: 0 .5rem;
 			}
+
+			input {
+				font-size: 1rem;
+				padding: .5rem;
+				border-radius: .25rem;
+
+				&[type="submit"] {
+					background: black;
+					color: white;
+					margin-left: .5rem;
+					border: 1px solid #000;
+				}
+			}
 			
 			label {
-
 				div {
 					font-size: .8rem;
 					display: block;
@@ -41,36 +53,27 @@ header {
 				}
 
 				input {
-					font-size: 1rem;
-					padding: .5rem;
-					border-radius: .25rem;
-
 					&[type="text"] {	
 						background: rgba(255, 255, 255, .33);
 						transition: ease .2s;
 						border: 1px solid rgba(0, 0, 0, 0);
 						min-width: 12.5rem;
+						color: #fff;
 
 						&::placeholder {
-							color: rgba(255, 255, 255, .66);
+							color: rgba(255, 255, 255, .33);
 						}
 
 						
 						&:focus {
 							background: white;
 							border: 1px solid #999;
+							color: #000;
 							
 							&::placeholder {
 								color: #999;
 							}
 						}
-					}
-
-					&[type="submit"] {
-						background: black;
-						color: white;
-						margin-left: .5rem;
-						border: 1px solid #000;
 					}
 				}
 			}

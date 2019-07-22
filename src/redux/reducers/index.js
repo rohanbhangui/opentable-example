@@ -1,30 +1,23 @@
 import { combineReducers } from 'redux';
-import { API_URL } from '../../utility/variables';
 
 import {
-  RETRIEVE_PLACES,
+  DATA_REQUESTED,
+  DATA_RECEIVED
 } from '../actions';
 
 const pages = (state = {}, action) => {
   switch (action.type) {
-    case RETRIEVE_PLACES:
-      const { searchObject } = this.action;
-
-      const concat = Object.keys(searchObject).map(key => encodeURIComponent(key) + '=' + encodeURIComponent(params[key])).join('&');
-
-      fetch(`${API_URL}?${concat}`)
-        .then((response) => {
-          response.json()
-            .then(data => data);
-        });
-      break;
+    case DATA_REQUESTED:
+      return state;
+    case DATA_RECEIVED:
+      return { ...state, places: action.payload };
     default:
       return state;
   }
 };
 
-const evolveApp = combineReducers({
+const combinedStore = combineReducers({
   pages,
 });
 
-export default evolveApp;
+export default combinedStore;

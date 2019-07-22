@@ -1,3 +1,3 @@
-import {ProductCard} from './product-search-card';
+import ProductCard from './product-search-card';
 
 export default ProductCard;
