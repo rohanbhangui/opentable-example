@@ -4,15 +4,15 @@ import './place-card.scss';
 
 const PlaceCard = ({ place }) => {
   const {
-    name,
-    address,
-    city,
-    state,
-    country,
-    phone,
-    image_url,
-    reserve_url,
-    price,
+    name = '',
+    address = '',
+    city = '',
+    state = '',
+    country = '',
+    phone = '',
+    image_url = 'https://placehold.it/200x200',
+    reserve_url = '',
+    price = null,
   } = place;
 
   const priceArray = new Array(4);
@@ -27,14 +27,13 @@ const PlaceCard = ({ place }) => {
         <h5 id="place-name">{name}</h5>
         <p>{address}</p>
         <p>{`${city}, ${state}, ${country}`}</p>
-        <p />
         <p>{phone}</p>
         <p id="price">
           { priceArray.map((item, index) => (
-            <span className={item}>$</span>
+            <span className={item} key={index}>$</span>
           ))}
         </p>
-        <a href={reserve_url} />
+        <a href={reserve_url} className="button primary">Reserve Now</a>
       </div>
     </div>
   );

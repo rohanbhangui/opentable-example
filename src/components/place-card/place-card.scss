@@ -7,8 +7,11 @@
 	.img-container {
 		width: 100%;
 		height: 200px;
+		max-width: 200px;
+		margin: 0 auto;
 
 		@include medium {
+			max-width: none;
 			height: 250px;
 		}
 
@@ -21,6 +24,13 @@
 
 	.text-content {
 		padding: 0.3rem;
+		max-width: 200px;
+		width: 100%;
+		margin: 0 auto;
+
+		@include medium {
+			max-width: none;
+		}
 
 		h5 {
 			color: $color-primary;
@@ -33,6 +43,10 @@
 			.accented {
 				color: $color-success;
 			}
+		}
+
+		a {
+			display: inline-block;
 		}
 	}
 }

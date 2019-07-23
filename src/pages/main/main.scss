@@ -15,6 +15,7 @@
 
     .places-item {
       margin: 1rem 0;
+      flex: 0 0 100%;
       
       @include small {
         flex: 0 0 50%;

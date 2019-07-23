@@ -3,15 +3,13 @@ import React from 'react';
 import './pagination-navigator.scss';
 
 const PaginationNavigator = ({
-  totalEntries, perPage, currentPage, query, location,
+  totalEntries, query, location,
 }) => {
   if (!location) {
     return (
       <div>Please enter a location</div>
     );
   }
-
-  console.log('DEBUG', totalEntries, perPage, currentPage, query, location);
 
   return (
     <div id="PaginationNavigator">
@@ -21,17 +19,8 @@ const PaginationNavigator = ({
           { query || 'restaurants' }
           &quot;
         </span>
-        &nbsp;
-        in
-        &nbsp;
-        { location }
-        &nbsp;
-        <span>
-          &mdash;
-          {totalEntries}
-          &nbsp;
-          Results
-        </span>
+        <span>{` in  ${location} `}</span>
+        <span>{`- ${totalEntries || 0} Results`}</span>
       </div>
     </div>
   );

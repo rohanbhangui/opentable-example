@@ -13,7 +13,7 @@ const Main = ({ pages }) => (
     <PaginationNavigator location={pages ? pages.location : ''} totalEntries={pages && pages.total_entries} query={pages && pages.query} />
     <div className="places-container">
       { pages && pages.location && pages.restaurants && pages.restaurants.map((item, index) => (
-        <div className="places-item" id={index}>
+        <div className="places-item" key={index}>
           <PlaceCard place={item} />
         </div>
       ))}

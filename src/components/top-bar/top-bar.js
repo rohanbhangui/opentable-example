@@ -26,17 +26,17 @@ const TopBar = ({ dataRequested }) => {
         payload = { ...payload, name };
       }
     }
-
-    if (loc) {
-      payload = { ...payload, city: loc };
-    }
+    //
+    //     if (loc) {
+    //       payload = { ...payload, city: loc };
+    //     }
 
     dataRequested(payload);
   };
 
-  useEffect(() => {
-    submitContent('toronto')();
-  }, []);
+  // useEffect(() => {
+  //   submitContent('toronto')();
+  // }, []);
 
   return (
     <div className="header-container">
@@ -48,7 +48,7 @@ const TopBar = ({ dataRequested }) => {
         <span>in</span>
         <label htmlFor="location">
           <div>Location</div>
-          <input name="location" type="text" defaultValue="Toronto" placeholder="Toronto, Boston, New York, etc." />
+          <input name="location" required type="text" placeholder="Toronto, Boston, New York, etc." />
         </label>
         <input type="submit" value="Search" />
       </form>
