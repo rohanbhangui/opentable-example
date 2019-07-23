@@ -16,7 +16,7 @@ const PaginationNavigator = ({
       <div id="search-string">
         <span className="accent">
           &quot;
-          { query || 'restaurants' }
+          { query || 'places' }
           &quot;
         </span>
         <span>{` in  ${location} `}</span>

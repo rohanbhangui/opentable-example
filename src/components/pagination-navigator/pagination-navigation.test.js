@@ -24,7 +24,7 @@ describe('PaginationNavigator', () => {
   it('should default to default query string if none is provided', () => {
     const component = shallow(<PaginationNavigator location="toronto" />);
 
-    expect(component.find('.accent').html()).toContain('&quot;restaurants&quot;');
+    expect(component.find('.accent').html()).toContain('&quot;places&quot;');
   });
 
   it('should use the provided query string', () => {
@@ -36,12 +36,12 @@ describe('PaginationNavigator', () => {
   it('should render "- 0 results"', () => {
     const component = shallow(<PaginationNavigator location="toronto" />);
 
-    expect(component.find('span').at(1).html()).toContain('- 0 Results');
+    expect(component.find('span').at(2).html()).toContain('- 0 Results');
   });
 
   it('should render "- 25 results"', () => {
     const component = shallow(<PaginationNavigator totalEntries="25" location="toronto" />);
 
-    expect(component.find('span').at(1).html()).toContain('- 25 Results');
+    expect(component.find('span').at(2).html()).toContain('- 25 Results');
   });
 });

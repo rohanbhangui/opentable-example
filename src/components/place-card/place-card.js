@@ -11,12 +11,12 @@ const PlaceCard = ({ place }) => {
     country = '',
     phone = '',
     image_url = 'https://placehold.it/200x200',
-    reserve_url = '',
-    price = null,
+    reserve_url = '#',
+    price = 1,
   } = place;
 
   const priceArray = new Array(4);
-  priceArray.fill('').fill('accented', 0, (price - 1));
+  priceArray.fill('').fill('active', 0, (price - 1));
 
   return (
     <div className="PlaceCard">
@@ -29,8 +29,8 @@ const PlaceCard = ({ place }) => {
         <p>{`${city}, ${state}, ${country}`}</p>
         <p>{phone}</p>
         <p id="price">
-          { priceArray.map((item, index) => (
-            <span className={item} key={index}>$</span>
+          { priceArray.map((type, index) => (
+            <span className={type} key={index}>$</span>
           ))}
         </p>
         <a href={reserve_url} className="button primary">Reserve Now</a>

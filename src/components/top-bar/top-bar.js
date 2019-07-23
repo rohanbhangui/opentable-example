@@ -26,17 +26,17 @@ const TopBar = ({ dataRequested }) => {
         payload = { ...payload, name };
       }
     }
-    //
-    //     if (loc) {
-    //       payload = { ...payload, city: loc };
-    //     }
+
+    if (loc) {
+      payload = { ...payload, city: loc };
+    }
 
     dataRequested(payload);
   };
 
-  // useEffect(() => {
-  //   submitContent('toronto')();
-  // }, []);
+  useEffect(() => {
+    submitContent('toronto')();
+  }, []);
 
   return (
     <div className="header-container">
