@@ -1,14 +1,13 @@
-const HtmlWebPackPlugin = require("html-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const CopyPlugin = require('copy-webpack-plugin');
+const HtmlWebPackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const htmlPlugin = new HtmlWebPackPlugin({
-  template: "./src/index.html",
-  filename: "./index.html"
+  template: './src/index.html',
+  filename: './index.html',
 });
 
 const cssPlugin = new MiniCssExtractPlugin({
-    filename: 'styles.css'
+  filename: 'styles.css',
 });
 
 module.exports = {
@@ -18,34 +17,34 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
-          loader: "babel-loader"
-        }
+          loader: 'babel-loader',
+        },
       },
       {
         test: /\.(scss|css)$/,
         use: [
           {
-            loader: MiniCssExtractPlugin.loader
+            loader: MiniCssExtractPlugin.loader,
           },
           {
             // translates CSS into CommonJS
-            loader: "css-loader",
+            loader: 'css-loader',
             options: {
-              sourceMap: true
-            }
+              sourceMap: true,
+            },
           },
           {
             // compiles Sass to CSS
-            loader: "sass-loader",
+            loader: 'sass-loader',
             options: {
               outputStyle: 'expanded',
               sourceMap: true,
-              sourceMapContents: true
-            }
+              sourceMapContents: true,
+            },
           },
-        ]
-      }
-    ]
+        ],
+      },
+    ],
   },
-  plugins: [htmlPlugin, cssPlugin]
+  plugins: [htmlPlugin, cssPlugin],
 };
