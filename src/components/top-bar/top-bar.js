@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { dataRequested } from '../../redux/actions';
 
-import logo from '../../assets/images/logo.svg';
 import './top-bar.scss';
 
 
