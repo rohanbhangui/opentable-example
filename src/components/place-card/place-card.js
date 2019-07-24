@@ -21,19 +21,21 @@ const PlaceCard = ({ place }) => {
   return (
     <div className="PlaceCard">
       <div className="img-container">
-        <img src={image_url} alt={name} />
+        <img src={image_url} alt={name} tabIndex="0" />
       </div>
       <div className="text-content">
-        <h5 id="place-name">{name}</h5>
-        <p>{address}</p>
-        <p>{`${city}, ${state}, ${country}`}</p>
-        <p>{phone}</p>
-        <p id="price">
+        <h5 id="place-name" tabIndex="0">{name}</h5>
+        <div tabIndex="0">
+          <p>{address}</p>
+          <p>{`${city}, ${state}, ${country}`}</p>
+        </div>
+        <p tabIndex="0">{phone}</p>
+        <p tabIndex="0" id="price">
           { priceArray.map((type, index) => (
             <span className={type} key={index}>$</span>
           ))}
         </p>
-        <a href={reserve_url} className="button primary">Reserve Now</a>
+        <a tabIndex="0" href={reserve_url} className="button primary">Reserve Now</a>
       </div>
     </div>
   );

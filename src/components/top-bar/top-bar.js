@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { dataRequested } from '../../redux/actions';
 
@@ -6,49 +6,35 @@ import logo from '../../assets/images/logo.svg';
 import './top-bar.scss';
 
 
-const TopBar = ({ dataRequested }) => {
-  const submitContent = loc => (e) => {
-    let payload = {};
-
-    if (e) {
-      e.preventDefault();
-
-      const formData = new FormData(e.target);
-      const city = formData.get('location');
-      const name = formData.get('refine');
-
-
-      if (city) {
-        payload = { ...payload, city };
-      }
-
-      if (name) {
-        payload = { ...payload, name };
-      }
-    }
-
-    if (loc) {
-      payload = { ...payload, city: loc };
-    }
-
-    dataRequested(payload);
+export const TopBar = ({ dataRequested }) => {
+  const form = {
+    city: '',
+    refine: '',
   };
 
-  useEffect(() => {
-    submitContent('toronto')();
-  }, []);
+  const [state, setState] = useState(form);
+
+  const submitContent = (e) => {
+    e.preventDefault();
+
+    dataRequested(state);
+  };
+
+  const onChange = (e) => {
+    setState({ ...form, [e.target.name]: e.target.value });
+  };
 
   return (
     <div className="header-container">
-      <form onSubmit={submitContent()}>
-        <label htmlFor="venueType">
+      <form onSubmit={submitContent} id="search">
+        <label htmlFor="refine">
           <div>Refine</div>
-          <input name="refine" type="text" placeholder="Restaraunts, Breakfast, etc." />
+          <input id="refine" name="refine" value={state.refine} onChange={onChange} type="text" placeholder="Restaraunts, Breakfast, etc." aria-label="Enter a refine term" />
         </label>
         <span>in</span>
-        <label htmlFor="location">
+        <label htmlFor="city">
           <div>Location</div>
-          <input name="location" required type="text" placeholder="Toronto, Boston, New York, etc." />
+          <input id="city" name="city" value={state.city} onChange={onChange} required type="text" placeholder="Toronto, Boston, New York, etc." aria-label="Enter a location" />
         </label>
         <input type="submit" value="Search" />
       </form>

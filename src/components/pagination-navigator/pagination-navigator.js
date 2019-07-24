@@ -13,7 +13,7 @@ const PaginationNavigator = ({
 
   return (
     <div id="PaginationNavigator">
-      <div id="search-string">
+      <div id="search-string" tabIndex="0">
         <span className="accent">
           &quot;
           { query || 'places' }
