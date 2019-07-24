@@ -47,8 +47,6 @@ describe('TopBar', () => {
       { preventDefault() {} },
     );
 
-    console.log(mockDataRequestedFn.mock.calls);
-
     expect(mockDataRequestedFn.mock.calls[2][0]).toEqual(
       { refine: 'xxx', city: '' },
     );

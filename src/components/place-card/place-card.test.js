@@ -76,7 +76,7 @@ describe('PlaceCard', () => {
     expect(component.find('p').at(2).text()).toEqual('000-000-0000');
   });
 
-  test.todo('should render 3 green dollar signs and 1 grey dollar sign');
+  // test.todo('should render 3 green dollar signs and 1 grey dollar sign');
 
   it('should render the url provided', () => {
     obj = { ...obj, reserve_url: 'http://abc.xyz' };
