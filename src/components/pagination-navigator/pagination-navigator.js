@@ -7,7 +7,9 @@ const PaginationNavigator = ({
 }) => {
   if (!location) {
     return (
-      <div>Please enter a location</div>
+      <div id="PaginationNavigator">
+        <div id="noLocation">Please enter a location</div>
+      </div>
     );
   }
 
